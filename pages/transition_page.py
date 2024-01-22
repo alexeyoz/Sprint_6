@@ -16,6 +16,5 @@ class TransitionPage(BasePage):
         self.find_element_located_click(Locators.LOGO_YANDEX)
 
     @allure.step("Переход на вторую вкладку")
-    def switch_window(self, num):
-        self.driver.switch_to.window(self.driver.window_handles[num])
-        time.sleep(2)
+    def switch_dzen(self):
+        self.switch_window(Locators.LOGO_DZEN, 1)

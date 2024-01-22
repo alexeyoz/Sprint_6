@@ -33,3 +33,8 @@ class BasePage:
     def apply_cookies(self):
         return self.find_element_located_click(Locators.COOKIES)
 
+    def switch_window(self, locator, num, time=10):
+        self.driver.switch_to.window(self.driver.window_handles[num])
+        return WebDriverWait(self.driver, time).until(EC.presence_of_element_located(locator))
+
+

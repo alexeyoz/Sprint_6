@@ -3,7 +3,7 @@ import pytest
 
 from pages.questions_page import QuestionsPage
 from locators.questions_locators import QuestionsLocators
-from constants import Constants
+from constants import *
 
 
 list_questions = [[QuestionsLocators.QUESTION_1, QuestionsLocators.QUESTION_1_TEXT,
@@ -38,7 +38,7 @@ list_questions = [[QuestionsLocators.QUESTION_1, QuestionsLocators.QUESTION_1_TE
 class TestQuestions:
     def test_questions(self, driver, question_locator, question_text_locator, text):
         questions_page = QuestionsPage(driver)
-        questions_page.go_to_site(Constants.BASE_URL)
+        questions_page.go_to_site(Url.BASE_URL)
         questions_page.scrolldown(question_locator)
         correct_text = questions_page.check_the_questions(question_locator, question_text_locator)
         assert correct_text == text

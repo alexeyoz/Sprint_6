@@ -2,14 +2,8 @@ import allure
 
 from locators.order_locators import OrderLocators
 from pages.base_page import BasePage
+from constants import *
 
-
-class TestData1:
-    test_data = ['Иван', 'Иванов', 'Ленина 1', 'Сокольники', '+9991112233', '01.10.2024', 'Позвонить за 30 минут']
-
-
-class TestData2:
-    test_data = ['Петр', 'Петров', 'Ленина 8', 'Лубянка', '+7772223344', '02.02.2024', 'Не звонить']
 
 class OrderPage(BasePage):
     @allure.step('Клик по кнопке Оформить заказ')
